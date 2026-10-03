@@ -4,6 +4,14 @@
 
 This document defines how the project maps the locked V1 requirements to Gemini video processing capabilities.
 
+## Current provider mapping
+
+- Gemini Interactions API is the recommended interface for new Gemini applications.
+- Public YouTube URLs can be passed directly as video input; YouTube URL support is currently documented as preview.
+- Static processing uses 1 FPS by default and can be explicitly configured with `processing: { type: "static", fps: 1 }`.
+- Agentic video understanding is supported by Gemini 3.8 Flash, 3.7 Flash, 3.6 Flash, and 3.5 Flash Lite according to the current Video Understanding documentation.
+- Structured JSON output is configured with `response_format` and an `application/json` schema.
+
 ## Processing strategy
 
 ### Static — primary
