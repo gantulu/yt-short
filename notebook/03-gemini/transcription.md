@@ -1,7 +1,13 @@
-# Dedicated Transcription
+# Gemini Transcription — Capability Reference
 
-Use dedicated transcription when exact dialogue/narration verification, speaker information, or detailed timing is required and the required audio input/capability is available.
+Audio evidence is part of the V1 unified timeline.
 
-Transcription is evidence for reconciliation, not an automatic replacement for video understanding.
+Dedicated transcription may be used when narration or dialogue requires verification and the capability is available.
 
-If transcription is unavailable or fails, preserve available audio observations and mark the limitation; never fabricate a transcript.
+## V1 rule
+
+Transcription is supporting evidence, not an authority that overrides direct video/audio evidence.
+
+Reconcile transcription with other evidence. Preserve uncertainty, corrections, and conflicts.
+
+If transcription is unavailable or fails, preserve available audio evidence and mark the affected information unknown or needs_review rather than inventing dialogue.
