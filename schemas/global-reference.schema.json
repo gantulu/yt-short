@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "yt-short/global-reference.schema.json",
+  "title": "Global Reference",
+  "type": "object",
+  "required": ["characters", "objects", "environments"],
+  "properties": {
+    "characters": { "$ref": "#/$defs/entities" },
+    "objects": { "$ref": "#/$defs/entities" },
+    "environments": { "$ref": "#/$defs/entities" }
+  },
+  "$defs": {
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "first_seen": { "type": ["number", "null"], "minimum": 0 },
+          "last_seen": { "type": ["number", "null"], "minimum": 0 },
+          "description": { "type": ["string", "null"] },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
