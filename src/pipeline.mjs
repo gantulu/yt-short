@@ -278,5 +278,7 @@ export async function runPipeline(input) {
   };
 
   state(result.validation.status === "valid" ? "COMPLETED" : "NEEDS_REVIEW");
+  delete result.evidence;
+  delete result.trace;
   return result;
 }
