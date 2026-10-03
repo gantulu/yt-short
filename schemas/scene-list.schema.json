@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "yt-short/scene-list.schema.json",
+  "title": "Gemini Video Understanding Scene List V1",
+  "type": "object",
+  "required": ["schema_version", "analysis_id", "video", "global_reference", "timeline", "scenes", "validation"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "analysis_id": { "type": "string", "minLength": 1 },
+    "video": {
+      "type": "object",
+      "required": ["video_id"],
+      "properties": {
+        "video_id": { "type": "string", "minLength": 1 },
+        "duration": { "type": ["number", "null"], "minimum": 0 },
+        "language": { "type": ["string", "null"] },
+        "aspect_ratio": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "global_reference": {
+      "type": "object",
+      "required": ["characters", "objects", "environments"],
+      "properties": {
+        "characters": { "type": "array" },
+        "objects": { "type": "array" },
+        "environments": { "type": "array" }
+      },
+      "additionalProperties": true
+    },
+    "timeline": {
+      "type": "object",
+      "required": ["visual_events", "audio_events", "scene_boundaries"],
+      "properties": {
+        "visual_events": { "type": "array" },
+        "audio_events": { "type": "array" },
+        "scene_boundaries": { "type": "array" }
+      },
+      "additionalProperties": true
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "start_time", "end_time", "duration", "evidence_ids"],
+        "properties": {
+          "scene_id": { "type": "string" },
+          "start_time": { "type": "number", "minimum": 0 },
+          "end_time": { "type": "number", "minimum": 0 },
+          "duration": { "type": "number", "minimum": 0 },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["status", "errors", "warnings"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["valid", "invalid", "needs_review"]
+        },
+        "errors": { "type": "array" },
+        "warnings": { "type": "array" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
