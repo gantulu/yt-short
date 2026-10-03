@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "analysis_id": "analysis_golden_001",
+  "video": {
+    "video_id": "WpO3Owaqp5E",
+    "duration": 4,
+    "language": "id",
+    "aspect_ratio": "9:16"
+  },
+  "global_reference": {
+    "characters": [
+      {
+        "id": "CHAR_001",
+        "first_seen": 0,
+        "last_seen": 4,
+        "description": "Observed character",
+        "evidence_ids": [
+          "EV_001"
+        ]
+      }
+    ],
+    "objects": [],
+    "environments": []
+  },
+  "timeline": {
+    "visual_events": [
+      {
+        "event_id": "VIS_001",
+        "start_time": 0,
+        "end_time": 4,
+        "type": "visual",
+        "description": "Observed visual event",
+        "evidence_ids": [
+          "EV_001"
+        ]
+      }
+    ],
+    "audio_events": [],
+    "scene_boundaries": []
+  },
+  "evidence": [
+    {
+      "evidence_id": "EV_001",
+      "source_stage": "static",
+      "start_time": 0,
+      "end_time": 4,
+      "classification": "observed",
+      "observation": "Observed character throughout the interval.",
+      "evidence_ids": []
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "SCENE_001",
+      "start_time": 0,
+      "end_time": 4,
+      "duration": 4,
+      "evidence_ids": [
+        "EV_001"
+      ],
+      "character_ids": [
+        "CHAR_001"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "valid",
+    "errors": [],
+    "warnings": []
+  }
+}
