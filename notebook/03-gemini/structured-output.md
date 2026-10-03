@@ -1,14 +1,11 @@
-# Structured Output
+# Gemini Structured Output — Capability Reference
 
-The canonical final contract is schemas/scene-list.schema.json.
+Current Gemini documentation supports structured outputs that conform to a supplied JSON Schema subset.
 
-Top-level concepts:
-- schema_version
-- analysis_id
-- video
-- global_reference
-- timeline
-- scenes
-- validation
+Relevant supported schema concepts include objects, arrays, strings, numbers, integers, booleans, null, required properties, descriptions, enums, and selected array constraints.
 
-The Notebook description must not redefine the JSON Schema. The canonical schema remains authoritative.
+## V1 relationship
+
+The repository's V1 scene-list contract is defined by the human-readable schema documents under 04-schemas/. Provider structured-output support may be used to help produce conforming output, but provider schema support does not redefine the repository contract.
+
+Always validate semantic correctness after structured generation. Valid JSON alone does not prove that the analysis is evidence-grounded or that the V1 completion gate passes.
