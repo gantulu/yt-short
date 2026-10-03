@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "yt-short/input.schema.json",
+  "title": "YouTube Shorts Analysis Input",
+  "type": "object",
+  "required": ["input"],
+  "properties": {
+    "input": {
+      "type": "string",
+      "minLength": 1,
+      "description": "YouTube video URL or video ID."
+    }
+  },
+  "additionalProperties": false
+}
