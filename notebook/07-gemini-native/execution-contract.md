@@ -1,25 +1,28 @@
 # Gemini Native Execution Contract — V1
 
+This document maps the Notebook Master Instruction to the V1 knowledge package.
+
 ## Input
-- Accept a public YouTube URL or an 11-character YouTube video ID.
-- Normalize the input before analysis.
-- Reject invalid or ambiguous input.
 
-## Processing
-Static is mandatory at 1 FPS for the complete duration.
-Gap detection classifies unresolved questions such as scene transition, visual action, character identity, object identity, environment, camera motion, audio event, dialogue, timestamp, and continuity.
-Agentic inspection is conditional on unresolved gaps.
+Accept one public YouTube URL, Shorts URL, or 11-character video ID.
 
-## Evidence
-Every meaningful observation must remain traceable to an evidence item. Evidence records source stage, timestamps, observation, and classification.
+## Processing contract
 
-## Scene contract
-Each scene requires scene_id, start_time, end_time, duration, and evidence_ids. Additional fields must remain evidence-grounded.
+- Static full-duration 1 FPS is mandatory V1 behavior.
+- Gap Detection precedes conditional Agentic Inspection.
+- Agentic Inspection is gap-driven and investigative.
+- Evidence Reconciliation preserves provenance and conflicts.
+- Global Reference is built after reconciliation.
+- Unified Timeline aligns visual and audio evidence.
+- Scene Decomposition consumes reconciled evidence.
+- Final Validation is the publication gate.
 
-## Timeline
-Visual and audio events use the same chronological time base. Audio categories are narration, dialogue, music, sfx, ambient, and unknown.
+## Evidence contract
+
+Evidence remains traceable to its producing stage, timestamp/range, observation, and classification.
 
 ## Final state
-VALIDATING_INPUT → STATIC_PROCESSING → GAP_DETECTION → AGENTIC_INSPECTION when needed → EVIDENCE_RECONCILIATION → GLOBAL_REFERENCE → SCENE_DECOMPOSITION → FINAL_VALIDATION → COMPLETED / NEEDS_REVIEW / FAILED.
 
-Final validation is a publication gate. The validator checks the result; it does not rewrite unsupported content.
+VALIDATING_INPUT → STATIC_PROCESSING → GAP_DETECTION → AGENTIC_INSPECTION when needed → EVIDENCE_RECONCILIATION → GLOBAL_REFERENCE → SCENE_DECOMPOSITION → FINAL_VALIDATION → COMPLETED / NEEDS_REVIEW / FAILED
+
+This file is not a second behavioral authority. Detailed behavior is defined by the master instruction plus canonical workflow, schema, and validation documents.
