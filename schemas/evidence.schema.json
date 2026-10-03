@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "yt-short/evidence.schema.json",
+  "title": "Video Evidence",
+  "type": "object",
+  "required": ["evidence_id", "source_stage", "classification", "observation"],
+  "properties": {
+    "evidence_id": { "type": "string", "minLength": 1 },
+    "source_stage": {
+      "type": "string",
+      "enum": ["static", "agentic", "transcription", "metadata"]
+    },
+    "start_time": { "type": ["number", "null"], "minimum": 0 },
+    "end_time": { "type": ["number", "null"], "minimum": 0 },
+    "classification": {
+      "type": "string",
+      "enum": ["observed", "inferred", "unknown"]
+    },
+    "observation": { "type": "string", "minLength": 1 },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}
