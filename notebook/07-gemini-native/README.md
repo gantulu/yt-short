@@ -1,16 +1,22 @@
-# Gemini Native Instructions — V1
+# Gemini Native Control Layer
 
-This directory is the runtime instruction layer for Gemini Native when using the NotebookLM knowledge package.
+This directory is the NotebookLM control layer for Gemini Native.
 
-## Files
+## Authority
 
-- `system-instruction.md` — master orchestration instruction.
-- `execution-contract.md` — input, lifecycle, evidence, identity, audio, and completion contract.
-- `output-instruction.md` — final response contract.
-- `invocation.md` — exact user invocation pattern.
+- notebook-instruction.md — single master operating instruction.
+- execution-contract.md — concise execution mapping; it does not override the master instruction.
+- output-contract.md — single output authority.
+- invocation.md — minimal user invocation.
 
-## Operating rule
+## Usage model
 
-Load and follow the complete NotebookLM knowledge package. Do not substitute a simple video summary for the defined lifecycle.
+The user supplies only a public YouTube URL, Shorts URL, or 11-character video ID.
 
-NotebookLM supplies knowledge and instructions; Gemini Native performs video understanding.
+The rest of the behavior is supplied by this Notebook knowledge package.
+
+## Boundary
+
+NotebookLM is the knowledge/instruction layer. Gemini Native is the video-understanding runtime.
+
+The Notebook sources do not themselves execute video analysis. They define the role, workflow, evidence discipline, schema, validation, and provider capability guidance that Gemini Native should follow.
