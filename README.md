@@ -6,6 +6,8 @@ Gemini Video Understanding pipeline for YouTube Shorts.
 
 **Requirement status: LOCKED**
 
+**Executable runtime: IMPLEMENTED**
+
 V1 uses a Hybrid Static + Agentic strategy:
 
 1. Static analysis — mandatory, 1 FPS, full duration.
@@ -26,6 +28,8 @@ V1 uses a Hybrid Static + Agentic strategy:
 - system/ — global agent rules and constraints.
 - agents/ — stage-level agent contracts.
 - schemas/ — machine-readable data contracts.
+- src/ — executable V1 runtime and Gemini provider adapter.
+- test/ — deterministic V1 tests.
 
 ## Source of truth
 
