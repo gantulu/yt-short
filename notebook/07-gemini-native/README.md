@@ -1,13 +1,16 @@
-# Gemini Native Agent Instructions — V1
+# Gemini Native Instructions — V1
 
-Purpose: provide the runtime instruction layer for Gemini Native using the curated Notebook knowledge package.
+This directory is the runtime instruction layer for Gemini Native when using the NotebookLM knowledge package.
 
-GitHub remains the source of truth. This instruction layer does not redefine schemas or locked requirements.
+## Files
 
-Runtime input: public YouTube URL or YouTube video ID.
-Runtime output: V1 scene-list structure after the complete analysis lifecycle.
+- `system-instruction.md` — master orchestration instruction.
+- `execution-contract.md` — input, lifecycle, evidence, identity, audio, and completion contract.
+- `output-instruction.md` — final response contract.
+- `invocation.md` — exact user invocation pattern.
 
-Files:
-- system-instruction.md — master runtime instruction.
-- execution-contract.md — input, lifecycle, evidence, and completion contract.
-- output-instruction.md — final response rules.
+## Operating rule
+
+Load and follow the complete NotebookLM knowledge package. Do not substitute a simple video summary for the defined lifecycle.
+
+NotebookLM supplies knowledge and instructions; Gemini Native performs video understanding.

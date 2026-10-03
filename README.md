@@ -1,54 +1,41 @@
 # yt-short
 
-Gemini Video Understanding pipeline for YouTube Shorts.
+NotebookLM knowledge repository for Gemini Native YouTube Shorts Video Understanding.
 
-## V1.0 status
+## Purpose
 
-**Requirement status: LOCKED**
+This repository is dedicated to the **NotebookLM knowledge and instruction layer** used with Gemini Native. It contains the rules, workflow, agent roles, Gemini capability guidance, schemas, validation rules, examples, and invocation instructions required to analyze a public YouTube video and produce an evidence-grounded scene list.
 
-**Release status: V1.0.0**
-
-**Executable runtime: IMPLEMENTED**
-
-V1 uses a Hybrid Static + Agentic strategy:
-1. Static analysis — mandatory, 1 FPS, full duration.
-2. Gap detection — identifies unresolved questions.
-3. Agentic inspection — conditional investigation of unresolved gaps.
-4. Evidence reconciliation — preserves findings, corrections, and conflicts.
-5. Global Reference — persistent character, object, and environment IDs.
-6. Unified timeline — visual and audio events share one time base.
-7. Dedicated transcription — conditional dialogue/narration verification.
-8. Scene decomposition — structured chronological scene list.
-9. Final validator — timeline, continuity, evidence, and schema gate.
-
-## Repository map
-- docs/requirements/ — locked V1 requirements.
-- docs/architecture/ — pipeline and recovery contracts.
-- docs/gemini/ — Gemini-specific implementation guidance.
-- docs/releases/ — release records.
-- system/ — global agent rules and constraints.
-- agents/ — stage-level agent contracts.
-- schemas/ — machine-readable data contracts.
-- src/ — executable V1 runtime and Gemini provider adapter.
-- test/ — deterministic V1 tests.
-- notebook/ — curated AI-readable package for Gemini Native/Notebook.
+**NotebookLM is the knowledge layer. Gemini Native is the analysis runtime.**
 
 ## Source of truth
 
-The locked requirement document is `docs/requirements/v1-requirements.md`.
+`notebook/` is the sole active source of truth.
 
-Gemini API behavior must be verified against current official Google documentation before provider-specific API changes.
+The repository intentionally contains no Node.js runtime, API-key configuration, executable pipeline, test harness, or duplicate documentation layer.
 
-## Local verification
+## Notebook package
 
-```
-npm install
-npm test
-npm run analyze -- <youtube-url-or-video-id>
-```
+- `00-system/` — identity, principles, constraints, source-of-truth rules.
+- `01-workflow/` — complete analysis lifecycle.
+- `02-agents/` — stage roles and responsibilities.
+- `03-gemini/` — Gemini Video Understanding guidance.
+- `04-schemas/` — input, evidence, timeline, global-reference, and scene-list contracts.
+- `05-validation/` — evidence, timeline, continuity, output, completion, and acceptance rules.
+- `06-examples/` — expected output examples.
+- `07-gemini-native/` — instructions and invocation contract for Gemini Native.
 
-A successful release does not imply that live Gemini execution occurred in every environment.
+## Usage
 
-## Completion rule
+1. Add the `notebook/` directory contents to the intended NotebookLM notebook as the knowledge/instruction source package.
+2. Use the Gemini Native workflow defined in `notebook/07-gemini-native/`.
+3. Provide one public YouTube URL or 11-character YouTube video ID.
+4. Require the complete lifecycle and final validation before accepting the scene list.
 
-No analysis may be reported as COMPLETED until Final Validator passes.
+## Versioning
+
+The historical V1 analysis contract remains preserved inside the Notebook package. Changes to locked behavior require an explicit version increment.
+
+## Principle
+
+Do not fabricate visual details, dialogue, timestamps, identities, events, or metadata. Preserve uncertainty and conflicts instead of silently inventing certainty.
